@@ -1,9 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { categories } from "../_examples";
 import { Category, SubmitResult, Word } from "../_types";
 import { delay, shuffleArray } from "../_utils";
 
-export default function useGameLogic() {
+export default function useGameLogic(puzzle: Category[] | null) {
   const [gameWords, setGameWords] = useState<Word[]>([]);
   const selectedWords = useMemo(
     () => gameWords.filter((item) => item.selected),
@@ -12,17 +11,19 @@ export default function useGameLogic() {
   const [clearedCategories, setClearedCategories] = useState<Category[]>([]);
   const [isWon, setIsWon] = useState(false);
   const [isLost, setIsLost] = useState(false);
-  const [mistakesRemaining, setMistakesRemaning] = useState(4);
+  const [mistakesRemaining, setMistakesRemaining] = useState(4);
   const guessHistoryRef = useRef<Word[][]>([]);
 
   useEffect(() => {
-    const words: Word[] = categories
-      .map((category) =>
-        category.items.map((word) => ({ word: word, level: category.level }))
-      )
-      .flat();
-    setGameWords(shuffleArray(words));
-  }, []);
+    if (puzzle) {
+      const words: Word[] = puzzle
+        .map((category) =>
+          category.items.map((word) => ({ word: word, level: category.level }))
+        )
+        .flat();
+      setGameWords(shuffleArray(words));
+    }
+  }, [puzzle]);
 
   const selectWord = (word: Word): void => {
     const newGameWords = gameWords.map((item) => {
@@ -64,16 +65,16 @@ export default function useGameLogic() {
 
     guessHistoryRef.current.push(selectedWords);
 
-    const likenessCounts = categories.map((category) => {
+    const likenessCounts = puzzle?.map((category) => {
       return selectedWords.filter((item) => category.items.includes(item.word))
         .length;
     });
 
-    const maxLikeness = Math.max(...likenessCounts);
-    const maxIndex = likenessCounts.indexOf(maxLikeness);
+    const maxLikeness = Math.max(...(likenessCounts || []));
+    const maxIndex = likenessCounts?.indexOf(maxLikeness) ?? -1;
 
     if (maxLikeness === 4) {
-      return getCorrectResult(categories[maxIndex]);
+      return getCorrectResult(puzzle[maxIndex]);
     } else {
       return getIncorrectResult(maxLikeness);
     }
@@ -93,7 +94,7 @@ export default function useGameLogic() {
   };
 
   const getIncorrectResult = (maxLikeness: number): SubmitResult => {
-    setMistakesRemaning(mistakesRemaining - 1);
+    setMistakesRemaining(mistakesRemaining - 1);
 
     if (mistakesRemaining === 1) {
       return { result: "loss" };
@@ -105,13 +106,13 @@ export default function useGameLogic() {
   };
 
   const handleLoss = async () => {
-    const remainingCategories = categories.filter(
+    const remainingCategories = puzzle?.filter(
       (category) => !clearedCategories.includes(category)
     );
 
     deselectAllWords();
 
-    for (const category of remainingCategories) {
+    for (const category of remainingCategories || []) {
       await delay(1000);
       setClearedCategories((prevClearedCategories) => [
         ...prevClearedCategories,
