@@ -10,8 +10,9 @@ type CellProps = {
 };
 
 export default function Cell(props: CellProps) {
-  const bgColor = props.cellValue.selected ? "bg-slate-500" : "bg-slate-200";
-  const textColor = props.cellValue.selected ? "text-stone-100" : "text-black";
+  const bgColor = props.cellValue.selected ? "bg-[#b0c5ff]" : "bg-white";
+  const textColor = props.cellValue.selected ? "text-black" : "text-[#2f75af]";
+  const borderColor = props.cellValue.selected ? "border-[#009cde]" : "border-[#009cde]";
 
   const handleClick = () => {
     props.onClick(props.cellValue);
@@ -24,10 +25,10 @@ export default function Cell(props: CellProps) {
 
   return (
     <button
-      className={`${bgColor} py-6 rounded-md break-all px-1 transition ease-in-out ${guessAnimation} ${wrongGuessAnimation}`}
+      className={`${bgColor} ${borderColor} border py-6 rounded-md break-all px-1 transition ease-in-out ${guessAnimation} ${wrongGuessAnimation}`}
       onClick={handleClick}
     >
-      <h2 className={`${textColor} text-xs md:text-lg text-center font-bold`}>
+      <h2 className={`${textColor} text-xs md:text-sm text-center font-bold`}>
         {props.cellValue.word.toUpperCase()}
       </h2>
     </button>
