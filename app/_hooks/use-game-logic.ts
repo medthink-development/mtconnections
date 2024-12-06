@@ -73,7 +73,7 @@ export default function useGameLogic(puzzle: Category[] | null) {
     const maxLikeness = Math.max(...(likenessCounts || []));
     const maxIndex = likenessCounts?.indexOf(maxLikeness) ?? -1;
 
-    if (maxLikeness === 4) {
+    if (puzzle !== null && puzzle !== undefined && maxLikeness === 4) {
       return getCorrectResult(puzzle[maxIndex]);
     } else {
       return getIncorrectResult(maxLikeness);
