@@ -138,12 +138,8 @@ export function Puzzle({id}: PuzzleProps) {
 
   return (
     <>
-      <div className="flex flex-col items-center w-11/12 md:w-3/4 lg:w-7/12 mx-auto mt-14">
-        <h1 className="text-black text-4xl font-semibold my-4 ml-4">
-          Connections
-        </h1>
-        <hr className="mb-4 md:mb-4 w-full"></hr>
-        <h1 className="text-black mb-4">Create four groups of four!</h1>
+      <div className="flex flex-col items-center w-11/12 md:w-3/4 lg:w-7/12 mx-auto mt-2">
+        <h1 className="text-black mb-10 font-bold">Create four groups of four!</h1>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message}/>
           <Grid
@@ -155,9 +151,12 @@ export function Puzzle({id}: PuzzleProps) {
             wrongGuessAnimationState={wrongGuessAnimationState}
           />
         </div>
-        <h2 className="text-black my-4 md:my-8 mx-8">
-          Mistakes Remaining:{" "}
-          {mistakesRemaining > 0 ? Array(mistakesRemaining).fill("•") : ""}
+        <h2 className=" text-2xl text-black my-4 md:my-8 mx-8">
+        <div className="flex flex-row items-center">
+          <span className="">Mistakes Remaining:</span><span className="w-[200px] text-[#009cde] text-5xl ml-4">{" "}
+          {mistakesRemaining > 0 ? Array(mistakesRemaining).fill("❄") : ""}
+          </span>
+        </div>
         </h2>
         {renderControlButtons()}
       </div>

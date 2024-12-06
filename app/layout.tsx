@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from 'next/link';
+import Head from 'next/head';
+import PuzzleButtons from './_components/PuzzleButtons'; // Import the new component
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-ltblue`}>
+        <Head>
+                  <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin></link>
+          <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet"></link>
+        </Head>
         <div className="relative w-full">
           {/* Beige background covering full width */}
           <div className="absolute top-0 left-0 w-full bg-tan h-[70%] z-0"></div>
@@ -44,8 +52,93 @@ export default function RootLayout({
               <div className="text-white text-xl font-semibold  mb-10 ">How To Play</div>
             </div>
           </div>
+        
         </div>
+        <div className="bg-[#e5f3ff] pt-10 pb-5">
+  <div className="w-11/12 md:w-3/4 lg:w-7/12 mx-auto flex items-center justify-between px-4">
+    {/* Heading */}
+    <h2 className="text-6xl font-bold text-[#005792] font-caveat">
+      Play now
+    </h2>
+
+    {/* Buttons Row */}
+    <div className="flex items-center gap-4">
+      {/* Tab 1: Active */}
+      <PuzzleButtons />
+    </div>
+  </div>
+</div>
         {children}
+           
+        <footer className="text-white">
+  {/* Section 1: Full-width background with contained content */}
+  <div className="bg-[#009cde]">
+    <div className="max-w-7xl mx-auto text-center font-bold text-6xl font-caveat px-4 pt-20 pb-20">
+      <div>Thank you for playing.</div>
+      <div>Happy holidays from MedThink!</div>
+    </div>
+  </div>
+
+  {/* Section 2: Full-width background with contained content */}
+  <div className="bg-[#4a4e51]">
+    <div className="max-w-7xl mx-auto grid grid-cols-5 gap-8 px-4 pt-10 pb-10">
+      {/* Column 1: Logo */}
+      <div className="flex flex-col items-center">
+        <img
+          className="w-48 h-auto"
+          alt="Footer Logo"
+          src="/assets/mt-logo-white.svg"
+        />
+      </div>
+
+      {/* Column 2: Links */}
+      <div className="flex flex-col ">
+        <a href="#" className="text-md underline pb-1 hover:underline">
+          Home
+        </a>
+        <a href="#" className="text-md underline pb-1 hover:underline">
+          Capabilities
+        </a>
+        <a href="#" className="text-md underline pb-1 hover:underline">
+          Leadership
+        </a>
+        <a href="#" className="text-md underline pb-1 hover:underline">
+          Careers
+        </a>
+      </div>
+
+      {/* Column 3: Links */}
+      <div className="flex flex-col">
+        <a href="#" className="text-md underline pb-1 hover:underline">
+          Sitemap
+        </a>
+        <a href="#" className="text-md underline pb-1 hover:underline">
+          Terms Of Use
+        </a>
+        <a href="#" className="text-md underline pb-1 hover:underline">
+          Privacy Policy
+        </a>
+      </div>
+
+      {/* Column 4: Links */}
+      <div className="flex flex-col">
+        <a href="#" className="text-md underline pb-1 hover:underline">
+          LinkedIn
+        </a>
+        <a href="#" className="text-md underline pb-1 hover:underline">
+          Facebook
+        </a>
+      </div>
+
+      {/* Column 5: Links */}
+      <div className="flex flex-col">
+        <a href="#" className="text-md underline pb-1 hover:underline">
+        P: (518) 693-6960
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
       </body>
     </html>
   );

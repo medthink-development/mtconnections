@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        caveat: ['Caveat', 'cursive'],
+      },
       colors: {
         tan: "#f5f1e5",
         turq: "#64ccc9",
