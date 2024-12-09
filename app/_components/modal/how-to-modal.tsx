@@ -37,24 +37,17 @@ export default function HowToModal(props: HowToModalProps) {
             <div className="flex-grow">
               <ol className="list-decimal mt-6 mb-6 list-inside text-lg leading-relaxed space-y-4">
                 <li>
-                  <span className="font-semibold">Start the puzzle.</span> Select a puzzle
-                  mascot (penguin, snowman, tree) to begin.
+                  <span className="font-semibold">Start the puzzle.</span> Select a puzzle (1, 2, or 3) to begin. Starting with Puzzle 1 is recommended. 
                 </li>
                 <li>
-                  <span className="font-semibold">Identify connections.</span> Look at the
-                  grid to group the 16 words into 4 sets of 4 words. Each set should
-                  share a common theme or connection. You may notice some overlap
-                  between groups—focus on the clearest connections, e.g., synonyms,
-                  categories, or word associations.
+                  <span className="font-semibold">Identify connections.</span> Look at the grid to group the 16 words into 4 sets of 4 words. Each set should share a common theme or connection. You may notice some overlap between groups—focus on the clearest connections, eg, synonyms, categories, or word associations.
                 </li>
                 <li>
-                  <span className="font-semibold">Adjust your selections.</span> Use the
-                  shuffle or deselect buttons below the puzzle to rearrange or change
-                  your groupings, if needed.
+                  <span className="font-semibold">Adjust your selections.</span> Use the shuffle or deselect buttons below the puzzle to rearrange or change your groupings if needed.
                 </li>
                 <li>
-                  <span className="font-semibold">Submit your grouping.</span> Once you're
-                  confident in a grouping, hit Submit.
+                  <span className="font-semibold">Submit your grouping.</span> Once you&apos;re
+                  confident in a grouping, hit <strong>Submit</strong>.
                   <ul className="list-disc list-inside ml-5 mt-2 text-base">
                     <li>If you are correct, move on to the next grouping.</li>
                     <li>If you are incorrect, your mistake will be recorded (4 mistakes allowed in total).</li>
