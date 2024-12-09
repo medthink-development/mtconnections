@@ -1,7 +1,7 @@
 "use client";
 
 import { Word } from "@/app/_types";
-import ScaleText from "react-scale-text";
+const ScaleText = require('react-scale-text')
 
 type CellProps = {
   cellValue: Word;
