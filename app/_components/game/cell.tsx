@@ -1,6 +1,7 @@
 "use client";
 
 import { Word } from "@/app/_types";
+import ScaleText from "react-scale-text";
 
 type CellProps = {
   cellValue: Word;
@@ -29,7 +30,9 @@ export default function Cell(props: CellProps) {
       onClick={handleClick}
     >
       <h2 className={`${textColor} text-xs md:text-sm text-center font-bold`}>
+      <ScaleText>
         {props.cellValue.word.toUpperCase()}
+        </ScaleText>
       </h2>
     </button>
   );

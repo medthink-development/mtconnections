@@ -5,6 +5,8 @@ import Head from 'next/head';
 import PuzzleButtons from './_components/PuzzleButtons'; // Import the new component
 //import font
 import { Caveat, Inter } from "next/font/google";
+import { useState } from "react";
+import HowToButton from "./_components/button/how-to-button";
 
 const inter = Inter({ subsets: ["latin"] });
 const caveat = Caveat({ subsets: ["latin"] });
@@ -24,51 +26,58 @@ export default function RootLayout({
 
       <body className={`${inter.className} bg-ltblue`}>
 
-        <div className="relative w-full pb-4">
-          {/* Beige background covering full width */}
-          <div className="absolute top-0 left-0 w-full bg-tan h-[70%] z-0"></div>
+        <div className="relative w-full pb-2 sm:pb-3 md:pb-3">
+{/* Beige background covering full width */}
+<div className="absolute top-0 left-0 w-full bg-tan h-[60%] sm:h-[70%] z-0"></div>
 
-          {/* Green background covering full width */}
-          <div className="absolute top-[70%] left-0 w-full bg-turq h-[30%] z-0 pb-10"></div>
+{/* Green background covering full width */}
+<div className="absolute top-[60%] sm:top-[70%] left-0 w-full bg-turq h-[40%] sm:h-[30%] z-0 pb-10"></div>
 
-          {/* Background images in the corners */}
-          <div className="absolute top-0 left-0 w-44 h-44 bg-[url('/assets/lights-left.png')] bg-no-repeat bg-contain z-10"></div>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[url('/assets/lights-right.png')] bg-no-repeat bg-contain z-10"></div>
+
+{/* Background images in the corners */}
+<div className="absolute top-0 left-0 w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 bg-[url('/assets/lights-left.png')] bg-no-repeat bg-contain z-10"></div>
+<div className="absolute top-0 right-0 w-40 h-40 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-[url('/assets/lights-right.png')] bg-no-repeat bg-contain z-10"></div>
+
 
           {/* Container for logo and "How To Play" text, with max width */}
           <div className="relative max-w-lg mx-auto px-4">
             {/* Logo container */}
             <div className="relative flex justify-center items-center z-10">
-              <img
-                className="mt-20 max-w-md md:max-w-lg lg:max-w-2xl mx-auto"
-                alt="MedThink Connections Logo"
-                src="/assets/hero.png"
-              />
-            </div>
+  <img
+    className="mt-8 sm:mt-12 md:mt-20 max-w-xs sm:max-w-sm md:max-w-md sm:mt-20 lg:max-w-lg xl:max-w-2xl mx-auto"
+    alt="MedThink Connections Logo"
+    src="/assets/hero.png"
+  />
+</div>
+
 
             {/* "How To Play" text positioned bottom right under the logo */}
             <div className="flex justify-end items-center mt-4 pr-4 z-20">
-            <div className="text-white text-xl font-semibold mr-2">How To Play</div><div className="inline flex items-center justify-center w-10 h-10 border-4 border-white rounded-full text-white font-bold text-3xl">
-  ?
-</div>
+              {/* "How To Play"popup"` */}
+
+            <HowToButton />
+
             </div>
           </div>
 
         </div>
         <div className="bg-[#e5f3ff] pt-10 pb-5">
-          <div className="w-11/12 md:w-3/4 lg:w-7/12 mx-auto flex items-center justify-between px-4">
-            {/* Heading */}
-            <h2 className={`text-6xl font-bold text-[#005792] ${caveat.className}`}>
-              Play now
-            </h2>
+  <div className="w-11/12 md:w-3/4 lg:w-7/12 mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-6">
+    {/* Heading */}
+    <h2
+      className={`text-4xl md:text-6xl font-bold text-[#005792] text-center md:text-left ${caveat.className}`}
+    >
+      Play now
+    </h2>
 
-            {/* Buttons Row */}
-            <div className="flex items-center gap-4">
-              {/* Tab 1: Active */}
-              <PuzzleButtons />
-            </div>
-          </div>
-        </div>
+    {/* Buttons Row */}
+    <div className="flex flex-wrap items-center justify-center gap-4">
+      {/* Tab 1: Active */}
+      <PuzzleButtons />
+    </div>
+  </div>
+</div>
+
         {children}
 
         <footer className="text-white">
