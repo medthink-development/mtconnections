@@ -50,7 +50,6 @@ export default function GameWonModal(props: GameWonModalProps) {
     <div className="flex space-x-4">
       {nextPuzzle && (
         <ControlButton
-          className=""
           text="Play Next Puzzle"
           onClick={handleNextGame}
         />
