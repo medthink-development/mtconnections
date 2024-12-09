@@ -4,9 +4,9 @@ export default function ControlButton(props: {
   unclickable?: boolean;
 }) {
   const click = props.unclickable ? "pointer-events-none" : "";
-  const borderColor = props.unclickable ? "border-stone-500" : "border-[#009cde]";
-  const textColor = props.unclickable ? "text-stone-500" : "text-[#2f75af]";
-  const backgroundColor = props.unclickable ? "" : "bg-white";
+  const borderColor = props.unclickable ? "border-stone-500" : "border-[#2f75af]";
+  const textColor = props.unclickable ? "text-stone-500" : "text-white";
+  const backgroundColor = props.unclickable ? "" : "bg-[#2f75af]";
 
   return (
     <button

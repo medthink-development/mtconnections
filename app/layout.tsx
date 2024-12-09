@@ -24,12 +24,12 @@ export default function RootLayout({
 
       <body className={`${inter.className} bg-ltblue`}>
 
-        <div className="relative w-full">
+        <div className="relative w-full pb-4">
           {/* Beige background covering full width */}
           <div className="absolute top-0 left-0 w-full bg-tan h-[70%] z-0"></div>
 
           {/* Green background covering full width */}
-          <div className="absolute top-[70%] left-0 w-full bg-turq h-[30%] z-0"></div>
+          <div className="absolute top-[70%] left-0 w-full bg-turq h-[30%] z-0 pb-10"></div>
 
           {/* Background images in the corners */}
           <div className="absolute top-0 left-0 w-44 h-44 bg-[url('/assets/lights-left.png')] bg-no-repeat bg-contain z-10"></div>
@@ -48,7 +48,9 @@ export default function RootLayout({
 
             {/* "How To Play" text positioned bottom right under the logo */}
             <div className="flex justify-end items-center mt-4 pr-4 z-20">
-              <div className="text-white text-xl font-semibold  mb-10 ">How To Play</div>
+            <div className="text-white text-xl font-semibold mr-2">How To Play</div><div className="inline flex items-center justify-center w-10 h-10 border-4 border-white rounded-full text-white font-bold text-3xl">
+  ?
+</div>
             </div>
           </div>
 
@@ -72,7 +74,7 @@ export default function RootLayout({
         <footer className="text-white">
           {/* Section 1: Full-width background with contained content */}
           <div className="bg-[#009cde]">
-            <div className={`max-w-7xl mx-auto text-center font-bold text-6xl ${caveat.className} px-4 pt-20 pb-20`}>
+            <div className={`mt-10 max-w-7xl mx-auto text-center font-bold text-6xl ${caveat.className} px-4 pt-20 pb-20`}>
               <div>Thank you for playing.</div>
               <div>Happy holidays from MedThink!</div>
             </div>
