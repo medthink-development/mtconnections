@@ -20,17 +20,16 @@ export default function GameWonModal(props: GameWonModalProps) {
 
   //get path
   const currentPath = usePathname();
-  console.log('currentPath', currentPath)
+
 
   //get puzzle number
   const currentPuzzle = currentPath ? parseInt(currentPath.split('/')[2]) : null;
-  console.log('currentPuzzle', currentPuzzle)
 
 
   // Calculate nextPuzzle
   const nextPuzzle =
     currentPuzzle !== null && currentPuzzle < 3 ? currentPuzzle + 1 : null;
-    console.log('nextPuzzle out', router?.pathname)
+
 
   const handleNextGame = () => {
     if (router && nextPuzzle) {
