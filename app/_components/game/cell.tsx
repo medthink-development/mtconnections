@@ -1,7 +1,8 @@
 "use client";
 
 import { Word } from "@/app/_types";
-const ScaleText = require('react-scale-text')
+ const ScaleText = require('react-scale-text')
+
 
 type CellProps = {
   cellValue: Word;
@@ -29,8 +30,8 @@ export default function Cell(props: CellProps) {
       className={`${bgColor} ${borderColor} border py-6 rounded-md break-all px-1 transition ease-in-out ${guessAnimation} ${wrongGuessAnimation}`}
       onClick={handleClick}
     >
-      <h2 className={`${textColor} sm:my-1 md:my-1 lg:my-3 text-xs md:text-sm text-center font-bold`}>
-      <ScaleText maxFontSize="16">
+      <h2 className={`${textColor} sm:my-1 md:my-1 lg:my-3 text-xs md:text-sm text-center font-bold no-wrap`}>
+      <ScaleText className="no-wrap" maxFontSize={16} >
         {props.cellValue.word.toUpperCase()}
         </ScaleText>
       </h2>

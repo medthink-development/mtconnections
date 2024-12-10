@@ -23,8 +23,8 @@ export function Puzzle({id}: PuzzleProps) {
   const [showGameWonModal, setShowGameWonModal] = useState(false);
   const [showGameLostModal, setShowGameLostModal] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  console.log('id', id)
-  console.log('puzzle: ', puzzles)
+
+
   const {
     guessAnimationState,
     wrongGuessAnimationState,

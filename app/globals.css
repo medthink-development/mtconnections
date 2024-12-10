@@ -27,3 +27,15 @@ body {
     text-wrap: balance;
   }
 }
+
+
+.no-wrap 
+{
+  white-space: nowrap;
+}
+
+
+.no-wrap div
+{
+  white-space: nowrap;
+}
