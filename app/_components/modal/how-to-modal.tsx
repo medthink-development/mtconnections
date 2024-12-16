@@ -24,17 +24,17 @@ export default function HowToModal(props: HowToModalProps) {
 
         <div className="text-black max-w-4xl mx-auto">
          
-          <div className="flex flex-col md:flex-row md:gap-4">
-          <div className="flex items-center text-lg font-medium flex-grow mb-6 md:mb-0">
-            <div className="flex flex-col">
+    
+  
+      
           <h2 className={`text-[#005792] text-6xl font-bold mb-4 ${caveat.className} `}>How to play</h2>
-  <p>
+  <p className="pb-5">
     The objective of <span className="font-bold">MedThink Connections</span> is to group the words that share a common connection.
   </p>
-  </div>
-</div>
+ 
+
             <div className="hidden md:block border-l border-white"></div>
-            <div className="flex-grow">
+         
               <ol className="list-decimal mt-6 mb-6 list-inside text-lg leading-relaxed space-y-4">
                 <li>
                   <span className="font-semibold">Start the puzzle.</span> Select a puzzle (1, 2, or 3) to begin. Starting with Puzzle 1 is recommended. 
@@ -63,8 +63,7 @@ export default function HowToModal(props: HowToModalProps) {
                   this one again).
                 </li>
               </ol>
-            </div>
-          </div>
+        
         </div>
       </div>
     </GameModal>

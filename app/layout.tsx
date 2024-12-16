@@ -40,11 +40,11 @@ export default function RootLayout({
 
 
           {/* Container for logo and "How To Play" text, with max width */}
-          <div className="relative max-w-lg mx-auto px-4">
+          <div className="relative max-w-xs sm:max-w-sm md:max-w-md xl:max-w-3xl lg:max-w-lg mx-auto px-4">
             {/* Logo container */}
             <div className="relative flex justify-center items-center z-10">
   <img
-    className="mt-8 sm:mt-12 md:mt-20 max-w-xs sm:max-w-sm md:max-w-md sm:mt-20 lg:max-w-lg xl:max-w-2xl mx-auto"
+    className="mt-8 sm:mt-12 md:mt-10 max-w-xs sm:max-w-sm md:max-w-md sm:mt-20 lg:max-w-lg xl:max-w-3xl mx-auto"
     alt="MedThink Connections Logo"
     src="/assets/hero.png"
   />
@@ -52,7 +52,7 @@ export default function RootLayout({
 
 
             {/* "How To Play" text positioned bottom right under the logo */}
-            <div className="flex justify-end items-center mt-4 pr-4 z-20">
+            <div className="flex justify-end items-center mt-4 z-20">
               {/* "How To Play"popup"` */}
 
             <HowToButton />
@@ -103,46 +103,49 @@ export default function RootLayout({
 
               {/* Column 2: Links */}
               <div className="flex flex-col ">
-                <a href="#" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.medthink.com/" className="text-md underline pb-1 hover:underline uppercase">
                   Home
                 </a>
-                <a href="#" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.medthink.com/capabilities" className="text-md underline pb-1 hover:underline uppercase">
                   Capabilities
                 </a>
-                <a href="#" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.medthink.com/leadership" className="text-md underline pb-1 hover:underline uppercase">
                   Leadership
                 </a>
-                <a href="#" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.medthink.com/careers" className="text-md underline pb-1 hover:underline uppercase">
                   Careers
+                </a>
+                <a href="https://www.medthink.com/contact" className="text-md underline pb-1 hover:underline uppercase">
+                  Contact Us
                 </a>
               </div>
 
               {/* Column 3: Links */}
               <div className="flex flex-col">
-                <a href="#" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.medthink.com/site-map" className="text-md underline pb-1 hover:underline">
                   Sitemap
                 </a>
-                <a href="#" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.fingerpaint.com/terms-of-use" className="text-md underline pb-1 hover:underline">
                   Terms Of Use
                 </a>
-                <a href="#" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.fingerpaint.com/privacy-policy" className="text-md underline pb-1 hover:underline">
                   Privacy Policy
                 </a>
               </div>
 
               {/* Column 4: Links */}
               <div className="flex flex-col">
-                <a href="#" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.linkedin.com/company/medthink-inc/" className="text-md underline pb-1 hover:underline">
                   LinkedIn
                 </a>
-                <a href="#" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.facebook.com/MedThink/" className="text-md underline pb-1 hover:underline">
                   Facebook
                 </a>
               </div>
 
               {/* Column 5: Links */}
               <div className="flex flex-col">
-                <a href="#" className="text-md underline pb-1 hover:underline">
+                <a href="tel:5186936960" className="text-md underline pb-1 hover:underline">
                   P: (518) 693-6960
                 </a>
               </div>

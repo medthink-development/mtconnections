@@ -13,10 +13,10 @@ export default function HowToButton() {
         className="flex items-center space-x-2 button button--how-to"
         onClick={() => setShowHowToModal(true)}
       >
-        <div className={`text-white text-xl font-semibold`}>
-          How To Play
+        <div className={`text-black text-xl font-semibold`}>
+          How to play
         </div>
-        <div className="flex items-center justify-center w-8 h-8 border-2 border-white rounded-full text-white font-bold text-2xl">
+        <div className="flex items-center justify-center w-8 h-8 border-2 border-black rounded-full text-black font-bold text-2xl">
           ?
         </div>
       </button>

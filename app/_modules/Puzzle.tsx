@@ -74,6 +74,7 @@ export function Puzzle({id}: PuzzleProps) {
         break;
       case "incorrect":
         animateWrongGuess();
+        showPopup("Try again...");
         break;
     }
     setSubmitted(false);
@@ -139,7 +140,7 @@ export function Puzzle({id}: PuzzleProps) {
   return (
     <>
       <div className="flex flex-col items-center w-11/12 md:w-3/4 lg:w-7/12 mx-auto mt-2">
-        <h1 className="text-black mb-10 font-bold">Create four groups of four!</h1>
+        <h1 className="text-black mb-10 font-bold">Create 4 groups of 4!</h1>
         <div className="relative w-full">
           <Popup show={popupState.show} message={popupState.message}/>
           <Grid
