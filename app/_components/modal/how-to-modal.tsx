@@ -54,7 +54,7 @@ export default function HowToModal(props: HowToModalProps) {
             <li className="flex items-start">
               <span className="mr-2 font-semibold">4.</span>
               <span>
-                <span className="font-semibold">Submit your grouping.</span> Once you're confident in a grouping, hit <strong>Submit</strong>.
+                <span className="font-semibold">Submit your grouping.</span> Once you&apos;re confident in a grouping, hit <strong>Submit</strong>.
                 <ul className="list-disc list-inside ml-5 mt-2 text-base">
                   <li>If you are correct, move on to the next grouping.</li>
                   <li>If you are incorrect, your mistake will be recorded (4 mistakes allowed in total).</li>
