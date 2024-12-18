@@ -14,6 +14,9 @@ const caveat = Caveat({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Connections",
   description: "Group four groups of four!",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -23,6 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
+
 
       <body className={`${inter.className} bg-ltblue`}>
 
@@ -103,49 +108,49 @@ export default function RootLayout({
 
               {/* Column 2: Links */}
               <div className="flex flex-col ">
-                <a href="https://www.medthink.com/" className="text-md underline pb-1 hover:underline uppercase">
+                <a href="https://www.medthink.com/" target="_Blank" className="text-md underline pb-1 hover:underline uppercase">
                   Home
                 </a>
-                <a href="https://www.medthink.com/capabilities" className="text-md underline pb-1 hover:underline uppercase">
+                <a href="https://www.medthink.com/capabilities" target="_Blank" className="text-md underline pb-1 hover:underline uppercase">
                   Capabilities
                 </a>
-                <a href="https://www.medthink.com/leadership" className="text-md underline pb-1 hover:underline uppercase">
+                <a href="https://www.medthink.com/leadership" target="_Blank" className="text-md underline pb-1 hover:underline uppercase">
                   Leadership
                 </a>
-                <a href="https://www.medthink.com/careers" className="text-md underline pb-1 hover:underline uppercase">
+                <a href="https://www.medthink.com/careers" target="_Blank" className="text-md underline pb-1 hover:underline uppercase">
                   Careers
                 </a>
-                <a href="https://www.medthink.com/contact" className="text-md underline pb-1 hover:underline uppercase">
+                <a href="https://www.medthink.com/contact" target="_Blank" className="text-md underline pb-1 hover:underline uppercase">
                   Contact Us
                 </a>
               </div>
 
               {/* Column 3: Links */}
               <div className="flex flex-col">
-                <a href="https://www.medthink.com/site-map" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.medthink.com/site-map" target="_Blank" className="text-md underline pb-1 hover:underline">
                   Sitemap
                 </a>
-                <a href="https://www.fingerpaint.com/terms-of-use" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.fingerpaint.com/terms-and-conditions" target="_Blank" className="text-md underline pb-1 hover:underline">
                   Terms Of Use
                 </a>
-                <a href="https://www.fingerpaint.com/privacy-policy" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.fingerpaint.com/privacy-policy" target="_Blank" className="text-md underline pb-1 hover:underline">
                   Privacy Policy
                 </a>
               </div>
 
               {/* Column 4: Links */}
               <div className="flex flex-col">
-                <a href="https://www.linkedin.com/company/medthink-inc/" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.linkedin.com/company/medthink-inc/" target="_Blank" className="text-md underline pb-1 hover:underline">
                   LinkedIn
                 </a>
-                <a href="https://www.facebook.com/MedThink/" className="text-md underline pb-1 hover:underline">
+                <a href="https://www.facebook.com/MedThink/" target="_Blank" className="text-md underline pb-1 hover:underline">
                   Facebook
                 </a>
               </div>
 
               {/* Column 5: Links */}
               <div className="flex flex-col">
-                <a href="tel:5186936960" className="text-md underline pb-1 hover:underline">
+                <a href="tel:5186936960" target="_Blank" className="text-md underline pb-1 hover:underline">
                   P: (518) 693-6960
                 </a>
               </div>
